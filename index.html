@@ -769,20 +769,19 @@
       }
 
       #hero {
-        padding-top: calc(var(--header-h) + 12px);
-        padding-bottom: 8px; /* Tight bottom padding for the pinned ribbon */
-        justify-content: space-between; /* Force ribbon to the absolute bottom of viewport */
+        padding-top: var(--header-h);
+        padding-bottom: 0;
+        justify-content: center; /* Center the whole symmetric block */
         height: 100dvh;
-        overflow-y: hidden; 
+        overflow-y: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
       
-      .hero-badge {
-        margin-top: 1.5dvh;
-        margin-bottom: 1dvh;
-        font-size: 0.7rem;
+      .hero-text-content {
+        margin-top: 25px; /* Symmetrical padding under nav */
+        margin-bottom: 0;
       }
 
       .hero h1 {
@@ -793,7 +792,7 @@
 
       .hero p {
         font-size: 0.88rem;
-        margin-bottom: 1.5dvh;
+        margin-bottom: 2dvh;
         max-width: 90vw;
         line-height: 1.4;
       }
@@ -803,8 +802,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 30dvh; /* Balanced height to ensure ribbon visibility */
-        margin-bottom: 5px;
+        max-height: 30dvh;
+        margin-bottom: 25px; /* Symmetrical padding above ribbon */
       }
 
       .hero-image {
@@ -818,9 +817,10 @@
       .hero-ribbon {
         position: relative;
         height: 36px;
-        margin-top: auto; /* Uses flex 'auto' to pin to the very bottom */
+        margin-top: 0;
         font-size: 0.8rem;
         width: 100vw;
+        border-top: 1px solid var(--primary);
         border-bottom: 1px solid var(--primary);
         flex-shrink: 0;
         z-index: 100;
