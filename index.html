@@ -710,7 +710,7 @@
       }
     }
 
-    /* ── Small mobile: tighten further ── */
+    /* ── Mobile Optimization (360px - 430px | DPR 3) ── */
     @media (max-width: 480px) {
       :root {
         --ribbon-h: 28px;
@@ -719,46 +719,60 @@
 
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 5px; 
-        justify-content: space-between;
-        height: 100dvh; /* Force dynamic viewport height */
+        padding-bottom: 0;
+        justify-content: flex-start;
+        height: 100dvh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
       }
       
       .hero-badge {
-        margin-top: 2dvh; /* Scale based on viewport height */
+        margin-top: 1.5dvh;
         margin-bottom: 1dvh;
+        font-size: 0.7rem;
       }
 
       .hero h1 {
-        font-size: clamp(1.3rem, 8vw, 1.6rem);
-        margin-bottom: 1dvh;
+        font-size: clamp(1.2rem, 7.5vw, 1.5rem);
+        margin-bottom: 0.8dvh;
+        line-height: 1.1;
       }
 
       .hero p {
-        font-size: 0.9rem;
-        margin-bottom: 2dvh;
-        max-width: 95vw; /* Respect CSS pixel width */
+        font-size: 0.88rem;
+        margin-bottom: 1.5dvh;
+        max-width: 90vw;
+        line-height: 1.4;
       }
 
       .hero-image-wrapper {
-        max-height: 22dvh;
-        margin-top: 0;
-        margin-bottom: 2dvh;
-        image-rendering: -webkit-optimize-contrast; /* Best for high DPR screens */
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 35dvh; /* Enlarge the image */
+        margin-bottom: 1.5dvh;
+        overflow: hidden;
       }
 
       .hero-image {
-        max-height: 22dvh;
-        max-width: 80vw;
-        border-radius: 8px;
+        max-height: 35dvh;
+        width: auto;
+        max-width: 85vw;
+        object-fit: contain;
+        image-rendering: -webkit-optimize-contrast; /* Sharper for DPR 3 */
+        transform: translateZ(0); /* Hardware acceleration */
       }
 
       .hero-ribbon {
         position: relative;
-        height: 32px;
+        height: 34px;
         margin-top: auto;
         font-size: 0.75rem;
         width: 100vw;
+        flex-shrink: 0;
+        border-bottom: none;
       }
     }
   </style>
