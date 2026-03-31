@@ -795,8 +795,8 @@
 
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 5px;
-        justify-content: space-between; /* Symmetric anchor distribution */
+        padding-bottom: 0;
+        justify-content: space-between; /* Create symmetrical shell */
         height: 100dvh;
         width: 100vw;
         overflow: hidden;
@@ -815,13 +815,13 @@
       }
       
       .hero-text-content {
-        margin-top: 3dvh; /* Padding under navigation panel */
+        margin-top: 2.5dvh; /* Optimal top padding */
         margin-bottom: 0;
         text-align: center;
       }
 
       .hero h1 {
-        font-size: clamp(1.35rem, 8.5vw, 1.7rem); /* Slightly larger for extreme pixel density */
+        font-size: clamp(1.35rem, 8.5vw, 1.7rem);
         margin-bottom: 0.8dvh;
         line-height: 1.15;
       }
@@ -830,7 +830,7 @@
         font-size: 0.95rem;
         margin: 0 auto 1.5dvh auto;
         max-width: 95vw;
-        line-height: 1.45; /* Enhanced readability */
+        line-height: 1.45;
       }
 
       .hero-image-wrapper {
@@ -839,7 +839,7 @@
         align-items: center;
         justify-content: center;
         max-height: 35dvh;
-        margin-bottom: 3dvh; /* Symmetrical padding between image and ribbon */
+        margin-bottom: 1.5dvh;
         min-height: 0;
       }
 
@@ -848,15 +848,15 @@
         width: auto;
         max-width: 88vw;
         object-fit: contain;
-        image-rendering: high-quality; /* Optimize for extreme DPR 4 */
-        transform: translate3d(0,0,0); /* Hardware acceleration */
+        image-rendering: high-quality; /* DPR 4 specific sharpness */
+        transform: translateZ(0); /* Hardware acceleration */
       }
 
       .hero-ribbon {
         position: relative;
         height: 36px;
         margin-top: auto;
-        margin-bottom: 10px;
+        margin-bottom: 2.5dvh; /* Symmetrical bottom padding */
         font-size: 0.85rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
