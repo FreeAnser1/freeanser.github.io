@@ -57,13 +57,16 @@
     /* ── Scroll Container ── */
     #root-container {
       height: 100vh;
+      height: 100dvh; /* Use Dynamic Viewport Height for mobile browsers */
       overflow: hidden;
       touch-action: pan-y;
     }
 
     section {
       min-height: 100vh;
-      height: 100vh; /* Force sections to be exactly one viewport height */
+      min-height: 100dvh;
+      height: 100vh;
+      height: 100dvh;
       width: 100vw;
       padding: calc(var(--header-h) + 24px) clamp(16px, 5vw, 60px) clamp(40px, 6vh, 80px);
       position: relative;
@@ -72,7 +75,7 @@
       align-items: center;
       justify-content: center;
       overflow: hidden;
-      text-align: center; /* Center align section content by default */
+      text-align: center;
     }
 
     /* ── Top Promo Ribbon ── */
@@ -712,62 +715,50 @@
       :root {
         --ribbon-h: 28px;
         --nav-h: 46px;
-        /* Slightly smaller for tight mobile screens */
       }
 
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 10px; /* Minimal padding for the ribbon */
-        justify-content: space-between; /* Force ribbon to bottom */
-        display: flex;
-        flex-direction: column;
+        padding-bottom: 5px; 
+        justify-content: space-between;
+        height: 100dvh; /* Force dynamic viewport height */
       }
       
       .hero-badge {
-        margin-top: 15px; /* Added gap under navigation */
-        margin-bottom: 0.5rem;
+        margin-top: 2dvh; /* Scale based on viewport height */
+        margin-bottom: 1dvh;
       }
 
       .hero h1 {
-        font-size: 1.4rem;
-        margin-bottom: 0.3rem;
+        font-size: clamp(1.3rem, 8vw, 1.6rem);
+        margin-bottom: 1dvh;
       }
 
       .hero p {
-        font-size: 0.95rem; /* Tight mobile accessibility */
-        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        margin-bottom: 2dvh;
+        max-width: 95vw; /* Respect CSS pixel width */
       }
 
       .hero-image-wrapper {
-        max-height: 20vh;
-        margin-top: 8px;
-        margin-bottom: 20px; /* Added padding under image */
+        max-height: 22dvh;
+        margin-top: 0;
+        margin-bottom: 2dvh;
+        image-rendering: -webkit-optimize-contrast; /* Best for high DPR screens */
       }
 
       .hero-image {
-        max-height: 20vh;
-        max-width: 75vw;
-        border-radius: 12px;
+        max-height: 22dvh;
+        max-width: 80vw;
+        border-radius: 8px;
       }
 
       .hero-ribbon {
-        position: relative; /* Switch to flow positioning */
-        bottom: 0;
-        height: 36px;
-        margin-top: auto; /* Push it to the very bottom of the flex container */
-        font-size: 0.8rem;
-        z-index: 100;
+        position: relative;
+        height: 32px;
+        margin-top: auto;
+        font-size: 0.75rem;
         width: 100vw;
-        left: 0;
-      }
-
-      .steps-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .portfolio-card {
-        min-width: 100%;
-        max-width: 100%;
       }
     }
   </style>
