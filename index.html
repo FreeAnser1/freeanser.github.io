@@ -68,7 +68,7 @@
       height: 100vh;
       height: 100dvh;
       width: 100vw;
-      padding: calc(var(--header-h) + 24px) clamp(16px, 5vw, 60px) clamp(40px, 6vh, 80px);
+      padding: calc(var(--header-h) + 40px) clamp(16px, 5vw, 60px) 40px; /* Enhanced top offset */
       position: relative;
       display: flex;
       flex-direction: column;
@@ -159,7 +159,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      z-index: 999;
+      z-index: 2000; /* Higher priority to avoid overlaps */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
@@ -724,12 +724,11 @@
       }
 
       #hero {
-        padding-top: var(--header-h);
-        padding-bottom: 20px; /* Space for the unpinned ribbon */
+        padding-top: calc(var(--header-h) + 20px); /* Add padding under nav on mobile */
+        padding-bottom: 40px; 
         justify-content: flex-start;
-        height: auto; /* Allow natural flow for ribbon attachment */
-        min-height: 100dvh;
-        overflow-y: auto;
+        height: 100dvh;
+        overflow-y: hidden; /* Restore strict fold containment for halves */
         display: flex;
         flex-direction: column;
       }
