@@ -786,7 +786,7 @@
       }
     }
 
-    /* ── Mobile Optimization (390px | DPR 3) ── */
+    /* ── Mobile Optimization (375px | DPR 2) ── */
     @media (max-width: 480px) {
       :root {
         --ribbon-h: 28px;
@@ -796,7 +796,7 @@
       #hero {
         padding-top: var(--header-h);
         padding-bottom: 0;
-        justify-content: space-between; /* Symmetric shell distribution */
+        justify-content: space-between; /* Create symmetrical framing */
         height: 100dvh;
         width: 100vw;
         overflow: hidden;
@@ -815,22 +815,22 @@
       }
       
       .hero-text-content {
-        margin-top: 2.5dvh; /* Optimal symmetric top offset */
+        margin-top: 2.5dvh; /* Optimal top padding matched by ribbon bottom */
         margin-bottom: 0;
         text-align: center;
       }
 
       .hero h1 {
-        font-size: clamp(1.3rem, 8vw, 1.6rem); /* Balanced for 390px wide */
+        font-size: clamp(1.25rem, 7.5vw, 1.55rem); /* Specialized for 375px width */
         margin-bottom: 0.8dvh;
         line-height: 1.15;
       }
 
       .hero p {
-        font-size: 0.95rem;
+        font-size: 0.92rem;
         margin: 0 auto 1.5dvh auto;
-        max-width: 95vw;
-        line-height: 1.45;
+        max-width: 90vw;
+        line-height: 1.42;
       }
 
       .hero-image-wrapper {
@@ -846,9 +846,9 @@
       .hero-image {
         max-height: 35dvh;
         width: auto;
-        max-width: 88vw;
+        max-width: 85vw;
         object-fit: contain;
-        image-rendering: -webkit-optimize-contrast; /* Sharpness for DPR 3 */
+        image-rendering: -webkit-optimize-contrast; /* Sharpening for DPR 2 */
         transform: translateZ(0); /* Hardware acceleration */
       }
 
@@ -856,7 +856,7 @@
         position: relative;
         height: 36px;
         margin-top: auto;
-        margin-bottom: 2.5dvh; /* Identical bottom offset to top hero text */
+        margin-bottom: 2.5dvh; /* Symmetrical bottom padding matching top */
         font-size: 0.85rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
