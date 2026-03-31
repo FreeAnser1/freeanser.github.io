@@ -786,7 +786,7 @@
       }
     }
 
-    /* ── Mobile Optimization (360px - 430px | DPR 4) ── */
+    /* ── Mobile Optimization (390px | DPR 3) ── */
     @media (max-width: 480px) {
       :root {
         --ribbon-h: 28px;
@@ -796,7 +796,7 @@
       #hero {
         padding-top: var(--header-h);
         padding-bottom: 0;
-        justify-content: space-between; /* Create symmetrical shell */
+        justify-content: space-between; /* Symmetric shell distribution */
         height: 100dvh;
         width: 100vw;
         overflow: hidden;
@@ -815,13 +815,13 @@
       }
       
       .hero-text-content {
-        margin-top: 2.5dvh; /* Optimal top padding */
+        margin-top: 2.5dvh; /* Optimal symmetric top offset */
         margin-bottom: 0;
         text-align: center;
       }
 
       .hero h1 {
-        font-size: clamp(1.35rem, 8.5vw, 1.7rem);
+        font-size: clamp(1.3rem, 8vw, 1.6rem); /* Balanced for 390px wide */
         margin-bottom: 0.8dvh;
         line-height: 1.15;
       }
@@ -848,7 +848,7 @@
         width: auto;
         max-width: 88vw;
         object-fit: contain;
-        image-rendering: high-quality; /* DPR 4 specific sharpness */
+        image-rendering: -webkit-optimize-contrast; /* Sharpness for DPR 3 */
         transform: translateZ(0); /* Hardware acceleration */
       }
 
@@ -856,7 +856,7 @@
         position: relative;
         height: 36px;
         margin-top: auto;
-        margin-bottom: 2.5dvh; /* Symmetrical bottom padding */
+        margin-bottom: 2.5dvh; /* Identical bottom offset to top hero text */
         font-size: 0.85rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
