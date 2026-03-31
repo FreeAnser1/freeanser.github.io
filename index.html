@@ -5,22 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FreeAnser | Professional Content Writing & Digital Presence Agency</title>
-  <meta name="description" content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit and transform your brand with data-driven content strategies.">
-  <meta name="keywords" content="content writing, digital presence, SEO writing, professional writers, brand visibility, content strategy, free audit">
+  <meta name="description"
+    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit and transform your brand with data-driven content strategies.">
+  <meta name="keywords"
+    content="content writing, digital presence, SEO writing, professional writers, brand visibility, content strategy, free audit">
   <link rel="canonical" href="https://freeanser.com" />
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://freeanser.com/">
   <meta property="og:title" content="FreeAnser | Professional Content Writing & Digital Presence Agency">
-  <meta property="og:description" content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
+  <meta property="og:description"
+    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
   <meta property="og:image" content="https://freeanser.com/writer.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://freeanser.com/">
   <meta property="twitter:title" content="FreeAnser | Professional Content Writing & Digital Presence Agency">
-  <meta property="twitter:description" content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
+  <meta property="twitter:description"
+    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
   <meta property="twitter:image" content="https://freeanser.com/writer.png">
 
   <!-- JSON-LD Structured Data for Local Business/Service -->
@@ -56,8 +60,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://esm.sh">
   <!-- Zero-Delay Font Loading for LCP -->
-  <link rel="preload" as="style" fetchpriority="high" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional" media="all">
+  <link rel="preload" as="style" fetchpriority="high"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional" media="all">
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap">
   </noscript>
@@ -102,7 +108,8 @@
     /* ── Scroll Container ── */
     #root-container {
       height: 100vh;
-      height: 100dvh; /* Use Dynamic Viewport Height for mobile browsers */
+      height: 100dvh;
+      /* Use Dynamic Viewport Height for mobile browsers */
       overflow: hidden;
       touch-action: pan-y;
     }
@@ -113,7 +120,8 @@
       height: 100vh;
       height: 100dvh;
       width: 100vw;
-      padding: calc(var(--header-h) + 40px) clamp(16px, 5vw, 60px) 40px; /* Enhanced top offset */
+      padding: calc(var(--header-h) + 40px) clamp(16px, 5vw, 60px) 40px;
+      /* Enhanced top offset */
       position: relative;
       display: flex;
       flex-direction: column;
@@ -204,7 +212,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      z-index: 2000; /* Higher priority to avoid overlaps */
+      z-index: 2000;
+      /* Higher priority to avoid overlaps */
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
@@ -240,7 +249,8 @@
 
     /* ── Hero Section ── */
     .hero {
-      background: var(--bg); /* Use base bg, vignette is global */
+      background: var(--bg);
+      /* Use base bg, vignette is global */
     }
 
     .hero-grid {
@@ -276,7 +286,8 @@
       font-weight: 900;
       margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
       letter-spacing: -0.5px;
-      text-rendering: optimizeSpeed; /* Accelerate Paint */
+      text-rendering: optimizeSpeed;
+      /* Accelerate Paint */
     }
 
     .hero h1 span {
@@ -285,7 +296,8 @@
     }
 
     .hero p {
-      font-size: clamp(1rem, 2vw, 1.25rem); /* Increased minimum to 16px */
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      /* Increased minimum to 16px */
       color: rgba(26, 26, 26, 0.7);
       max-width: 500px;
       line-height: 1.6;
@@ -370,7 +382,8 @@
       border-radius: clamp(14px, 2.5vw, 24px);
       padding: clamp(1.2rem, 2.5vw, 2.5rem) clamp(1rem, 2vw, 2rem);
       position: relative;
-      overflow: hidden; /* Strictly contain sliding numbers */
+      overflow: hidden;
+      /* Strictly contain sliding numbers */
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       backdrop-filter: blur(10px);
       cursor: pointer;
@@ -385,28 +398,35 @@
 
     .step-num {
       position: absolute;
-      top: -20%; /* Completely outside the card (0% visible) */
-      left: -20%; /* Completely outside the card (0% visible) */
+      top: -20%;
+      /* Completely outside the card (0% visible) */
+      left: -20%;
+      /* Completely outside the card (0% visible) */
       transform: rotate(-15deg);
       font-size: clamp(3.5rem, 12vw, 8rem);
       font-weight: 900;
       font-family: sans-serif;
       color: rgba(0, 0, 0, 0.04);
       line-height: 1;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Faster, dramatic slide */
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      /* Faster, dramatic slide */
       z-index: 0;
       pointer-events: none;
       white-space: nowrap;
-      opacity: 0; /* Fully hidden initially */
+      opacity: 0;
+      /* Fully hidden initially */
     }
 
     .step-card:hover .step-num,
     .step-card:active .step-num {
       color: rgba(255, 122, 0, 0.12);
-      top: -5%; /* Slide in from top-left (70% visible) */
-      left: -5%; /* Slide in from top-left (70% visible) */
+      top: -5%;
+      /* Slide in from top-left (70% visible) */
+      left: -5%;
+      /* Slide in from top-left (70% visible) */
       transform: rotate(-5deg) scale(1.1);
-      opacity: 1; /* Fade in as it slides */
+      opacity: 1;
+      /* Fade in as it slides */
     }
 
     .step-title {
@@ -420,7 +440,8 @@
     }
 
     .step-desc {
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem); /* Increased minimum legibility */
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      /* Increased minimum legibility */
       color: rgba(26, 26, 26, 0.7);
       line-height: 1.6;
       position: relative;
@@ -429,7 +450,8 @@
 
     /* ── Lead Form Section ── */
     .lead-section {
-      background: var(--bg); /* Remove old orange overlay */
+      background: var(--bg);
+      /* Remove old orange overlay */
     }
 
     .form-wrapper {
@@ -578,7 +600,8 @@
       overflow: hidden;
       z-index: 10;
       font-weight: 400;
-      font-size: clamp(0.85rem, 1.8vw, 1.1rem); /* Increased for legibility */
+      font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+      /* Increased for legibility */
       color: #0474BA;
     }
 
@@ -713,8 +736,9 @@
         flex-direction: column;
         justify-content: flex-start;
         width: 100%;
-        flex: 1; /* Take up available space but allow ribbon to fit */
-        min-height: 0; 
+        flex: 1;
+        /* Take up available space but allow ribbon to fit */
+        min-height: 0;
       }
 
       .hero-text-content {
@@ -735,7 +759,8 @@
       }
 
       .hero p {
-        font-size: 1rem; /* Accessibility standard 16px */
+        font-size: 1rem;
+        /* Accessibility standard 16px */
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 0.8rem;
@@ -761,7 +786,7 @@
       }
     }
 
-    /* ── Mobile Optimization (360px - 430px | DPR 3) ── */
+    /* ── Mobile Optimization (360px - 430px | DPR 2/3) ── */
     @media (max-width: 480px) {
       :root {
         --ribbon-h: 28px;
@@ -770,56 +795,68 @@
 
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 0;
-        justify-content: center; /* Center the whole symmetric block */
+        padding-bottom: 5px;
+        justify-content: space-between; /* Anchor elements to top and bottom symmetrically */
         height: 100dvh;
-        overflow-y: hidden;
+        width: 100vw;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
+      .hero-grid {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center the middle content */
+        width: 100%;
+        gap: 0;
+      }
       
       .hero-text-content {
-        margin-top: 2dvh;
+        margin-top: 2.5dvh; /* Padding under navigation panel */
         margin-bottom: 0;
+        text-align: center;
       }
 
       .hero h1 {
-        font-size: clamp(1.2rem, 7.5vw, 1.5rem);
-        margin-bottom: 1dvh;
-        line-height: 1.1;
+        font-size: clamp(1.3rem, 8vw, 1.6rem);
+        margin-bottom: 0.8dvh;
+        line-height: 1.15;
       }
 
       .hero p {
-        font-size: 0.88rem;
-        margin-bottom: 1.5dvh;
-        max-width: 90vw;
+        font-size: 0.95rem;
+        margin: 0 auto 1.5dvh auto;
+        max-width: 95vw;
         line-height: 1.4;
       }
 
       .hero-image-wrapper {
-        flex: 1; /* Grow to fill available space symmetrically */
+        flex: 1;
         display: flex;
         align-items: center;
         justify-content: center;
         max-height: 35dvh;
-        margin-bottom: 10px;
+        margin-bottom: 2dvh; /* Buffer before ribbon */
+        min-height: 0;
       }
 
       .hero-image {
-        max-height: 32dvh;
+        max-height: 35dvh;
         width: auto;
-        max-width: 85vw;
+        max-width: 88vw;
         object-fit: contain;
         image-rendering: -webkit-optimize-contrast;
       }
 
       .hero-ribbon {
         position: relative;
-        height: 34px;
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 0.75rem;
+        height: 36px;
+        margin-top: auto; /* Pin to the floor */
+        margin-bottom: 10px; /* Small safe gap */
+        font-size: 0.8rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
         border-bottom: 1px solid var(--primary);
@@ -858,12 +895,13 @@
         <div class="blob blob-1"></div>
         <div class="hero-grid">
           <div class="hero-text-content">
-            <h1>Lets <span>24x</span> your visibility<br/>with our professional writers!</h1>
+            <h1>Lets <span>24x</span> your visibility<br />with our professional writers!</h1>
             <div style="height: 1.5rem;"></div> <!-- Spacing between H1 and p -->
-            <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market dominance.</p>
+            <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market
+              dominance.</p>
           </div>
           <div class="hero-image-wrapper">
-             <img src="writer.png" alt="Writer" class="hero-image" fetchpriority="high" decoding="async">
+            <img src="writer.png" alt="Writer" class="hero-image" fetchpriority="high" decoding="async">
           </div>
         </div>
         <div class="hero-ribbon">
