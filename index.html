@@ -76,6 +76,8 @@
       justify-content: center;
       overflow: hidden;
       text-align: center;
+      /* Global Smoky Vignette */
+      background-image: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.08) 100%);
     }
 
     /* ── Top Promo Ribbon ── */
@@ -193,7 +195,7 @@
 
     /* ── Hero Section ── */
     .hero {
-      background: radial-gradient(circle at center, #ffffff 0%, var(--bg) 70%);
+      background: var(--bg); /* Use base bg, vignette is global */
     }
 
     .hero-grid {
@@ -323,9 +325,10 @@
       border-radius: clamp(14px, 2.5vw, 24px);
       padding: clamp(1.2rem, 2.5vw, 2.5rem) clamp(1rem, 2vw, 2rem);
       position: relative;
-      overflow: hidden;
+      overflow: hidden; /* Strictly contain sliding numbers */
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       backdrop-filter: blur(10px);
+      cursor: pointer;
     }
 
     .step-card:hover {
@@ -337,25 +340,28 @@
 
     .step-num {
       position: absolute;
-      bottom: -4rem;
-      right: -1rem;
-      font-size: clamp(3.5rem, 12vw, 10rem);
+      top: -20%; /* Completely outside the card (0% visible) */
+      left: -20%; /* Completely outside the card (0% visible) */
+      transform: rotate(-15deg);
+      font-size: clamp(3.5rem, 12vw, 8rem);
       font-weight: 900;
       font-family: sans-serif;
-      color: rgba(0, 0, 0, 0.05);
-      /* Slightly darker base visibility */
+      color: rgba(0, 0, 0, 0.04);
       line-height: 1;
-      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* Faster, dramatic slide */
       z-index: 0;
       pointer-events: none;
-      transform: rotate(5deg);
+      white-space: nowrap;
+      opacity: 0; /* Fully hidden initially */
     }
 
-    .step-card:hover .step-num {
-      color: rgba(255, 122, 0, 0.15);
-      /* Much more visible orange accent */
-      bottom: -0.5rem;
+    .step-card:hover .step-num,
+    .step-card:active .step-num {
+      color: rgba(255, 122, 0, 0.12);
+      top: -5%; /* Slide in from top-left (70% visible) */
+      left: -5%; /* Slide in from top-left (70% visible) */
       transform: rotate(-5deg) scale(1.1);
+      opacity: 1; /* Fade in as it slides */
     }
 
     .step-title {
@@ -378,7 +384,7 @@
 
     /* ── Lead Form Section ── */
     .lead-section {
-      background: radial-gradient(circle at bottom, rgba(255, 122, 0, 0.15) 0%, var(--bg) 60%);
+      background: var(--bg); /* Remove old orange overlay */
     }
 
     .form-wrapper {
@@ -538,7 +544,7 @@
 
     /* ── Portfolio ── */
     .portfolio {
-      background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 70%);
+      background: var(--bg);
     }
 
     .portfolio-container {
@@ -719,10 +725,11 @@
 
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 0;
+        padding-bottom: 20px; /* Space for the unpinned ribbon */
         justify-content: flex-start;
-        height: 100dvh;
-        overflow: hidden;
+        height: auto; /* Allow natural flow for ribbon attachment */
+        min-height: 100dvh;
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
       }
@@ -747,32 +754,30 @@
       }
 
       .hero-image-wrapper {
-        flex: 1;
+        flex: none;
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 35dvh; /* Enlarge the image */
+        max-height: 40dvh; /* Enlarge the image further */
         margin-bottom: 1.5dvh;
-        overflow: hidden;
       }
 
       .hero-image {
-        max-height: 35dvh;
+        max-height: 40dvh;
         width: auto;
-        max-width: 85vw;
+        max-width: 90vw;
         object-fit: contain;
-        image-rendering: -webkit-optimize-contrast; /* Sharper for DPR 3 */
-        transform: translateZ(0); /* Hardware acceleration */
+        image-rendering: -webkit-optimize-contrast;
       }
 
       .hero-ribbon {
         position: relative;
-        height: 34px;
-        margin-top: auto;
-        font-size: 0.75rem;
+        height: 36px;
+        margin-top: 15px; /* Added small padding under the image */
+        font-size: 0.8rem;
         width: 100vw;
+        border-bottom: 1px solid var(--primary);
         flex-shrink: 0;
-        border-bottom: none;
       }
     }
   </style>
@@ -905,10 +910,10 @@
 
     const Process = () => {
       const steps = [
-        { num: "01", title: "Digital Presence Audit", desc: "Submit the form" },
-        { num: "02", title: "Get the Report", desc: "What's wrong and what can be worked upon" },
-        { num: "03", title: "Custom Quote", desc: "Custom plans that are always within your budget" },
-        { num: "04", title: "Strategic Roadmap", desc: "Specialised roadmap and Execution for maximum results" },
+        { num: "1", title: "Digital Presence Audit", desc: "Submit the form" },
+        { num: "2", title: "Get the Report", desc: "What's wrong and what can be worked upon" },
+        { num: "3", title: "Custom Quote", desc: "Custom plans that are always within your budget" },
+        { num: "4", title: "Strategic Roadmap", desc: "Specialised roadmap and Execution for maximum results" },
       ];
 
       return html`
