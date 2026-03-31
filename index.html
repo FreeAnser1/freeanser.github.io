@@ -780,34 +780,34 @@
       }
       
       .hero-text-content {
-        margin-top: 25px; /* Symmetrical padding under nav */
+        margin-top: 2dvh;
         margin-bottom: 0;
       }
 
       .hero h1 {
         font-size: clamp(1.2rem, 7.5vw, 1.5rem);
-        margin-bottom: 0.8dvh;
+        margin-bottom: 1dvh;
         line-height: 1.1;
       }
 
       .hero p {
         font-size: 0.88rem;
-        margin-bottom: 2dvh;
+        margin-bottom: 1.5dvh;
         max-width: 90vw;
         line-height: 1.4;
       }
 
       .hero-image-wrapper {
-        flex: none;
+        flex: 1; /* Grow to fill available space symmetrically */
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 30dvh;
-        margin-bottom: 25px; /* Symmetrical padding above ribbon */
+        max-height: 35dvh;
+        margin-bottom: 10px;
       }
 
       .hero-image {
-        max-height: 30dvh;
+        max-height: 32dvh;
         width: auto;
         max-width: 85vw;
         object-fit: contain;
@@ -816,14 +816,14 @@
 
       .hero-ribbon {
         position: relative;
-        height: 36px;
+        height: 34px;
         margin-top: 0;
-        font-size: 0.8rem;
+        margin-bottom: 10px;
+        font-size: 0.75rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
         border-bottom: 1px solid var(--primary);
         flex-shrink: 0;
-        z-index: 100;
       }
     }
   </style>
