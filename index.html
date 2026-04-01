@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>FreeAnser | Professional Content Writing & Digital Presence Agency</title>
   <meta name="description"
     content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit and transform your brand with data-driven content strategies.">
@@ -27,7 +27,6 @@
     content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
   <meta property="twitter:image" content="https://freeanser.com/writer.png">
 
-  <!-- JSON-LD Structured Data for Local Business/Service -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,26 +57,21 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://esm.sh">
-  <!-- Zero-Delay Font Loading for LCP -->
   <link rel="preload" as="style" fetchpriority="high"
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional">
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap">
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional" media="all">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap">
-  </noscript>
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" media="all">
+  
   <style>
     :root {
       --bg: #F5F2E6;
       --primary: #FF7A00;
       --primary-dark: #CC6200;
       --text: #1a1a1a;
-      --glass: rgba(255, 255, 255, 0.6);
+      --glass: rgba(255, 255, 255, 0.65);
       --glass-border: rgba(0, 0, 0, 0.08);
-      /* Fluid ribbon heights */
       --ribbon-h: 36px;
-      --nav-h: 60px;
+      --nav-h: 64px;
       --header-h: calc(var(--ribbon-h) + var(--nav-h));
     }
 
@@ -86,54 +80,41 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Outfit', sans-serif;
-      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    body,
-    html {
+    body, html {
       background-color: var(--bg);
       color: var(--text);
       height: 100%;
+      width: 100%;
       overflow: hidden;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      user-select: none;
+      touch-action: none;
     }
 
-    ::selection {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    /* ── Scroll Container ── */
+    /* ── Layout Containers ── */
     #root-container {
-      height: 100vh;
       height: 100dvh;
-      /* Use Dynamic Viewport Height for mobile browsers */
+      width: 100vw;
       overflow: hidden;
-      touch-action: pan-y;
+      position: relative;
     }
 
     section {
-      min-height: 100vh;
-      min-height: 100dvh;
-      height: 100vh;
       height: 100dvh;
       width: 100vw;
-      padding: calc(var(--header-h) + 40px) clamp(16px, 5vw, 60px) 40px;
-      /* Enhanced top offset */
+      padding: calc(var(--header-h) + 10px) clamp(1rem, 5vw, 2rem) 20px;
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
       text-align: center;
-      /* Global Smoky Vignette */
-      background-image: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.08) 100%);
+      background-image: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.05) 100%);
     }
 
-    /* ── Top Promo Ribbon ── */
+    /* ── Navigation ── */
     .ribbon {
       position: fixed;
       top: 0;
@@ -141,747 +122,216 @@
       width: 100%;
       height: var(--ribbon-h);
       background: var(--primary);
-      color: #ffffff;
+      color: #fff;
       display: flex;
       align-items: center;
-      overflow: hidden;
       z-index: 1000;
       font-weight: 800;
-      font-size: clamp(0.65rem, 1.8vw, 0.9rem);
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
       text-decoration: none;
-      cursor: pointer;
-    }
-
-    .ribbon:hover .ribbon-track {
-      animation-play-state: paused;
+      overflow: hidden;
     }
 
     .ribbon-track {
       display: flex;
       white-space: nowrap;
-      animation: scroll-left 40s linear infinite;
-    }
-
-    .ribbon-item {
-      padding: 0 clamp(0.8rem, 2vw, 2rem);
-      position: relative;
-    }
-
-    .ribbon .ribbon-item::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 1rem;
-      width: calc(100% - 2rem);
-      height: 2px;
-      background-color: #ffffff;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .ribbon .ribbon-item:hover::after {
-      transform: scaleX(1);
+      animation: scroll-left 30s linear infinite;
     }
 
     @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
-    /* ── Nav Bar ── */
+    .ribbon-item { padding: 0 1.5rem; }
+
     .nav-pill {
       position: fixed;
       top: var(--ribbon-h);
       left: 0;
       width: 100%;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 0 clamp(16px, 5%, 5%);
       height: var(--nav-h);
+      background: rgba(255, 252, 242, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 0 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1rem;
-      z-index: 2000;
-      /* Higher priority to avoid overlaps */
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      z-index: 999;
     }
 
     .nav-logo {
       font-weight: 900;
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      font-size: 1.5rem;
       color: var(--text);
-      cursor: pointer;
       text-decoration: none;
-      flex-shrink: 0;
     }
 
-    .nav-logo span {
-      color: var(--primary);
-    }
+    .nav-logo span { color: var(--primary); }
 
     .nav-cta {
       background: var(--primary);
-      color: #ffffff;
-      padding: clamp(0.4rem, 1.2vw, 0.6rem) clamp(0.8rem, 2.5vw, 2rem);
+      color: #fff;
+      padding: 0.5rem 0.8rem;
       border-radius: 50px;
-      font-weight: 800;
+      font-weight: 700;
+      font-size: 0.7rem;
       text-decoration: none;
-      font-size: clamp(0.72rem, 1.8vw, 1rem);
-      white-space: nowrap;
-      transition: all 0.3s ease;
-    }
-
-    .nav-cta:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 122, 0, 0.3);
+      box-shadow: 0 4px 12px rgba(255, 122, 0, 0.2);
     }
 
     /* ── Hero Section ── */
-    .hero {
-      background: var(--bg);
-      /* Use base bg, vignette is global */
-    }
-
     .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
       width: 100%;
-      gap: clamp(1.5rem, 4vw, 3rem);
-      z-index: 2;
-    }
-
-    .hero-text-content {
-      text-align: left;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: clamp(0.3rem, 0.8vw, 0.4rem) clamp(0.7rem, 1.5vw, 1rem);
-      border-radius: 50px;
-      background: var(--glass);
-      border: 1px solid var(--primary);
-      color: var(--primary);
-      font-weight: 600;
-      font-size: clamp(0.72rem, 1.6vw, 0.9rem);
-      margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
-      animation: float 4s ease-in-out infinite;
+      max-width: 500px;
+      gap: 1dvh;
     }
 
     .hero h1 {
-      font-size: clamp(1.6rem, 4.5vw, 2.8rem);
-      line-height: 1.2;
-      font-weight: 900;
-      margin-bottom: clamp(0.8rem, 2vw, 1.5rem);
-      letter-spacing: -0.5px;
-      text-rendering: optimizeSpeed;
-      /* Accelerate Paint */
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-      text-shadow: 0 0 40px rgba(255, 122, 0, 0.3);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      /* Increased minimum to 16px */
-      color: rgba(26, 26, 26, 0.7);
-      max-width: 500px;
-      line-height: 1.6;
-      margin-bottom: clamp(1rem, 2.5vw, 2rem);
-    }
-
-    .hero-image-wrapper {
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    .hero-image {
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 75vh;
-      object-fit: contain;
-      border-radius: clamp(12px, 3vw, 24px);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--glass-border);
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-
-      50% {
-        transform: translateY(-8px);
-      }
-    }
-
-    /* Fix spacing specifically for Hero to keep everything above the fold */
-    #hero {
-      padding-top: var(--header-h);
-      padding-bottom: clamp(40px, 8vh, 60px);
-      /* Responsive space for bottom ribbon */
-      justify-content: center;
-      min-height: 100vh;
-      max-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    /* ── Process Section ── */
-    .process {
-      background: url('data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="1" fill="rgba(0,0,0,0.03)"/></svg>');
-    }
-
-    .process-container {
-      max-width: 1200px;
-      width: 100%;
-      padding: clamp(0.5rem, 2vw, 2rem);
-      z-index: 2;
-    }
-
-    .section-title {
-      font-size: clamp(1.5rem, 4vw, 3rem);
-      font-weight: 900;
-      margin-bottom: clamp(1.5rem, 3vw, 3rem);
-      text-align: center;
-      width: 100%;
-    }
-
-    .section-title span {
-      color: var(--primary);
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
-      gap: clamp(1rem, 2vw, 2rem);
-    }
-
-    .step-card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      border-radius: clamp(14px, 2.5vw, 24px);
-      padding: clamp(1.2rem, 2.5vw, 2.5rem) clamp(1rem, 2vw, 2rem);
-      position: relative;
-      overflow: hidden;
-      /* Strictly contain sliding numbers */
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      backdrop-filter: blur(10px);
-      cursor: pointer;
-    }
-
-    .step-card:hover {
-      transform: translateY(-8px);
-      background: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    .step-num {
-      position: absolute;
-      top: -20%;
-      /* Completely outside the card (0% visible) */
-      left: -20%;
-      /* Completely outside the card (0% visible) */
-      transform: rotate(-15deg);
-      font-size: clamp(3.5rem, 12vw, 8rem);
-      font-weight: 900;
-      font-family: sans-serif;
-      color: rgba(0, 0, 0, 0.04);
-      line-height: 1;
-      transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-      /* Faster, dramatic slide */
-      z-index: 0;
-      pointer-events: none;
-      white-space: nowrap;
-      opacity: 0;
-      /* Fully hidden initially */
-    }
-
-    .step-card:hover .step-num,
-    .step-card:active .step-num {
-      color: rgba(255, 122, 0, 0.12);
-      top: -5%;
-      /* Slide in from top-left (70% visible) */
-      left: -5%;
-      /* Slide in from top-left (70% visible) */
-      transform: rotate(-5deg) scale(1.1);
-      opacity: 1;
-      /* Fade in as it slides */
-    }
-
-    .step-title {
-      font-size: clamp(1rem, 2.2vw, 1.5rem);
-      font-weight: 800;
-      margin-bottom: clamp(0.5rem, 1vw, 1rem);
-      color: var(--text);
-      position: relative;
-      z-index: 2;
-      white-space: normal;
-    }
-
-    .step-desc {
-      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
-      /* Increased minimum legibility */
-      color: rgba(26, 26, 26, 0.7);
-      line-height: 1.6;
-      position: relative;
-      z-index: 2;
-    }
-
-    /* ── Lead Form Section ── */
-    .lead-section {
-      background: var(--bg);
-      /* Remove old orange overlay */
-    }
-
-    .form-wrapper {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(30px);
-      border-radius: clamp(18px, 4vw, 32px);
-      padding: clamp(1.5rem, 4vw, 3rem) clamp(1.2rem, 3.5vw, 3rem);
-      max-width: 600px;
-      width: 95%;
-      text-align: center;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-wrapper h2 {
-      font-size: clamp(1.4rem, 4vw, 2.5rem);
+      font-size: clamp(1.6rem, 8vw, 2.4rem);
+      line-height: 1.1;
       font-weight: 900;
       margin-bottom: 0.5rem;
     }
 
-    .form-wrapper p {
-      color: rgba(26, 26, 26, 0.7);
-      margin-bottom: clamp(1.2rem, 3vw, 2.5rem);
-      font-size: clamp(0.85rem, 1.8vw, 1rem);
+    .hero h1 span { color: var(--primary); }
+
+    .hero p {
+      font-size: clamp(0.9rem, 4vw, 1.05rem);
+      color: rgba(0, 0, 0, 0.7);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+      padding: 0 10px;
     }
 
-    .input-group {
-      margin-bottom: clamp(1rem, 2vw, 1.5rem);
-      text-align: left;
+    .hero-image-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 0;
     }
 
-    .input-field {
-      width: 100%;
-      padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1rem, 2.5vw, 1.5rem);
-      background: rgba(255, 255, 255, 0.7);
-      border: 1px solid var(--glass-border);
-      border-radius: clamp(10px, 2vw, 16px);
-      color: var(--text);
-      font-size: clamp(0.85rem, 1.8vw, 1rem);
-      outline: none;
-      transition: border-color 0.3s;
-      -webkit-user-select: auto;
-      -moz-user-select: auto;
-      user-select: auto;
+    .hero-image {
+      max-height: 35dvh;
+      max-width: 90%;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
     }
 
-    .input-field:focus {
-      border-color: var(--primary);
-      background: #ffffff;
-    }
-
-    .input-field::placeholder {
-      color: rgba(26, 26, 26, 0.4);
-    }
-
-    .glow-btn {
-      width: 100%;
-      padding: clamp(0.8rem, 2vw, 1.2rem);
-      background: var(--primary);
-      color: #ffffff;
-      border: none;
-      border-radius: clamp(10px, 2vw, 16px);
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-      font-weight: 800;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s;
-      box-shadow: 0 0 20px rgba(255, 122, 0, 0.4);
-    }
-
-    .glow-btn::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
-      opacity: 0;
-      transform: scale(0.5);
-      transition: opacity 0.3s, transform 0.5s;
-    }
-
-    .glow-btn:hover {
-      box-shadow: 0 0 40px rgba(255, 122, 0, 0.7);
-      transform: translateY(-2px);
-    }
-
-    .glow-btn:hover::after {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-
-    /* ── Blob Animations ── */
-    .blob {
-      position: absolute;
-      filter: blur(80px);
-      z-index: 0;
-      opacity: 0.5;
-      animation: orbit 10s linear infinite;
-      pointer-events: none;
-    }
-
-    .blob-1 {
-      width: clamp(200px, 40vw, 400px);
-      height: clamp(200px, 40vw, 400px);
-      background: rgba(255, 122, 0, 0.12);
-      top: -100px;
-      left: -100px;
-      border-radius: 50%;
-    }
-
-    .blob-2 {
-      width: clamp(150px, 30vw, 300px);
-      height: clamp(150px, 30vw, 300px);
-      background: rgba(204, 98, 0, 0.12);
-      bottom: -50px;
-      right: -50px;
-      border-radius: 50%;
-      animation-direction: reverse;
-    }
-
-    @keyframes orbit {
-      0% {
-        transform: rotate(0deg) translate(50px) rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg) translate(50px) rotate(-360deg);
-      }
-    }
-
-    /* ── Hero Bottom Ticker Ribbon ── */
     .hero-ribbon {
-      position: absolute;
-      bottom: 8px;
-      left: 0;
-      width: 100%;
-      height: clamp(36px, 5vh, 50px);
-      background: rgba(255, 122, 0, 0.1);
+      width: 100vw;
+      margin: 0 -1rem;
+      height: 40px;
+      background: rgba(255, 122, 0, 0.08);
       border-top: 1px solid var(--primary);
       border-bottom: 1px solid var(--primary);
       display: flex;
       align-items: center;
-      overflow: hidden;
-      z-index: 10;
-      font-weight: 400;
-      font-size: clamp(0.85rem, 1.8vw, 1.1rem);
-      /* Increased for legibility */
+      font-size: 0.8rem;
       color: #0474BA;
+      overflow: hidden;
     }
 
-    .hero-ribbon .ribbon-title {
-      color: black;
-      font-weight: 800;
-    }
-
-    /* ── Portfolio ── */
-    .portfolio {
-      background: var(--bg);
-    }
-
-    .portfolio-container {
-      max-width: 1200px;
+    /* ── Process Cards ── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
       width: 100%;
-      z-index: 2;
-      text-align: center;
+      margin-top: 1rem;
     }
 
-    .portfolio-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: clamp(1rem, 2.5vw, 2rem);
-      margin-top: clamp(1rem, 2.5vw, 2rem);
-    }
-
-    .portfolio-card {
-      background: var(--glass);
+    .step-card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 16px;
       border: 1px solid var(--glass-border);
-      padding: clamp(1.5rem, 3vw, 3rem) clamp(1.2rem, 3vw, 3rem);
-      border-radius: clamp(14px, 3vw, 24px);
-      min-width: clamp(140px, 30vw, 250px);
-      flex: 1 1 clamp(140px, 30vw, 250px);
-      max-width: 300px;
-      backdrop-filter: blur(10px);
-      transition: all 0.3s;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      text-align: left;
+      position: relative;
+      overflow: hidden;
     }
 
-    .portfolio-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--primary);
-      background: #ffffff;
+    .step-title { font-size: 0.85rem; font-weight: 800; margin-bottom: 4px; }
+    .step-desc { font-size: 0.75rem; color: #666; }
+    .step-num { 
+        position: absolute; right: -5px; bottom: -10px; 
+        font-size: 3rem; font-weight: 900; color: rgba(0,0,0,0.03); 
     }
 
-    .portfolio-card h3 {
-      font-size: clamp(1.1rem, 2.5vw, 1.8rem);
-      font-weight: 800;
-      color: var(--text);
-    }
-
-    /* ── Modal ── */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
+    /* ── Form ── */
+    .form-wrapper {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 24px;
       width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
+    .input-field {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      font-size: 1rem;
+      -webkit-appearance: none;
     }
 
-    .modal-content {
-      background: var(--bg);
-      border: 1px solid var(--primary);
-      padding: 3rem 2rem;
-      border-radius: 32px;
-      text-align: center;
-      max-width: 400px;
-      width: 90%;
-      transform: scale(0.9);
-      transition: transform 0.3s;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    }
-
-    .modal-overlay.active .modal-content {
-      transform: scale(1);
-    }
-
-    .modal-content h3 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      color: var(--primary);
-    }
-
-    .modal-content p {
-      color: var(--text);
-      font-weight: 600;
-      margin-bottom: 2rem;
-    }
-
-    .modal-close {
+    .glow-btn {
+      width: 100%;
+      padding: 1rem;
       background: var(--primary);
       color: #fff;
       border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 50px;
+      border-radius: 12px;
       font-weight: 800;
-      cursor: pointer;
-      transition: transform 0.2s;
+      font-size: 1rem;
     }
 
-    .modal-close:hover {
-      transform: scale(1.05);
+    /* ── Portfolio ── */
+    .portfolio-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
     }
 
-    /* ── Tablet/Mobile: stack hero columns ── */
-    @media (max-width: 768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        width: 100%;
-        flex: 1;
-        /* Take up available space but allow ribbon to fit */
-        min-height: 0;
-      }
-
-      .hero-text-content {
-        text-align: center;
-        order: 1;
-      }
-
-      .hero-badge {
-        margin-bottom: 0.4rem;
-        font-size: 0.75rem;
-        padding: 0.2rem 0.6rem;
-      }
-
-      .hero h1 {
-        margin-bottom: 0.4rem;
-        font-size: clamp(1.4rem, 6vw, 2rem);
-        line-height: 1.1;
-      }
-
-      .hero p {
-        font-size: 1rem;
-        /* Accessibility standard 16px */
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 0.8rem;
-        max-width: 90%;
-        line-height: 1.5;
-      }
-
-      .hero-image-wrapper {
-        justify-content: center;
-        min-height: 0;
-        order: 2;
-        width: 100%;
-        max-height: 35vh;
-        /* Restricted to leave room for text/ribbons */
-      }
-
-      .hero-image {
-        max-width: 85%;
-        max-height: 35vh;
-        width: auto;
-        height: auto;
-        object-fit: contain;
-      }
+    .portfolio-card {
+      background: #fff;
+      padding: 1.2rem;
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+      font-weight: 800;
     }
 
-    /* ── Mobile Optimization (375px | DPR 2) ── */
-    @media (max-width: 480px) {
+    /* ── Responsive Refinements (380px) ── */
+    @media (max-width: 400px) {
       :root {
-        --ribbon-h: 28px;
-        --nav-h: 46px;
+        --nav-h: 56px;
       }
+      .hero h1 { font-size: 1.8rem; }
+      .hero p { font-size: 0.9rem; }
+      .nav-logo { font-size: 1.3rem; }
+      .nav-cta { font-size: 0.65rem; padding: 0.4rem 0.6rem; }
+      .steps-grid { grid-template-columns: 1fr; }
+    }
 
-      #hero {
-        padding-top: calc(var(--header-h) + 1vh); /* Tight, intentional gap */
-        padding-bottom: 50px; /* Space for the absolute ribbon */
-        justify-content: flex-start; /* Precise control over vertical flow */
-        height: 100dvh;
-        width: 100vw;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero-grid {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        gap: 0;
-      }
-      
-      .hero-text-content {
-        margin-top: 1vh; 
-        margin-bottom: 0;
-        text-align: center;
-        z-index: 5;
-      }
-
-      .hero h1 {
-        font-size: clamp(1.6rem, 8.5vw, 2.1rem); /* More impactful title */
-        margin-bottom: 0.5dvh;
-        line-height: 1.1;
-        letter-spacing: -0.02em;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      }
-
-      .hero p {
-        font-size: 0.98rem; /* Better legibility */
-        margin: 0 auto 1dvh auto;
-        max-width: 85vw;
-        line-height: 1.5;
-        color: rgba(26, 26, 26, 0.8);
-      }
-
-      .hero-image-wrapper {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-height: 32dvh;
-        margin-bottom: 0;
-        min-height: 0;
-        position: relative;
-      }
-
-      .hero-image {
-        max-height: 32dvh;
-        width: auto;
-        max-width: 85vw;
-        object-fit: contain;
-        transform: translateY(0);
-        filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
-        animation: hero-subtle-float 6s ease-in-out infinite;
-      }
-
-      @keyframes hero-subtle-float {
-        0%, 100% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-10px) scale(1.02); }
-      }
-
-      .hero-ribbon {
-        position: absolute; /* Fixed to bottom for guaranteed visibility */
-        bottom: 10px;
-        left: 0;
-        height: 40px;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 0.9rem;
-        width: 100vw;
-        background: rgba(255, 255, 255, 0.4);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-top: 1px solid var(--primary);
-        border-bottom: 1px solid var(--primary);
-        flex-shrink: 0;
-        z-index: 100;
-        display: flex;
-        align-items: center;
-      }
+    .blob {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,122,0,0.15) 0%, transparent 70%);
+      filter: blur(40px);
+      z-index: -1;
     }
   </style>
 
@@ -897,321 +347,138 @@
 </head>
 
 <body>
-  <div id="root">
-    <!-- Static Bootstrap (LCP Optimization) -->
-    <div id="root-container">
-      <a href="#lead-form" class="ribbon">
-        <div class="ribbon-track">
-          <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-          <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-          <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-        </div>
-      </a>
-      <nav class="nav-pill">
-        <a href="#hero" class="nav-logo">Free<span>Anser</span></a>
-        <a href="#lead-form" class="nav-cta">Free Digital Presence Audit!</a>
-      </nav>
-      <section id="hero" class="hero" style="min-height: 100vh; height: 100vh;">
-        <div class="blob blob-1"></div>
-        <div class="hero-grid">
-          <div class="hero-text-content">
-            <h1>Lets <span>24x</span> your visibility<br />with our professional writers!</h1>
-            <div style="height: clamp(0.5rem, 2vh, 1.5rem);"></div> <!-- Responsive spacing -->
-            <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market
-              dominance.</p>
-          </div>
-          <div class="hero-image-wrapper">
-            <img src="writer.png" alt="Writer" class="hero-image" fetchpriority="high" decoding="async">
-          </div>
-        </div>
-        <div class="hero-ribbon">
-          <div class="ribbon-track hero-track">
-            <span class="ribbon-item">Loading live client success stories...</span>
-          </div>
-        </div>
-      </section>
-    </div>
-  </div>
+  <div id="root"></div>
 
   <script type="module">
     import { render } from 'preact';
     import { useState, useEffect, useRef } from 'preact/hooks';
     import { html } from 'htm';
 
-    // ============================================
-    // COMPONENTS
-    // ============================================
-
-    const Modal = ({ isOpen, onClose }) => html`
-  <div class="modal-overlay ${isOpen ? 'active' : ''}" onClick=${onClose}>
-    <div class="modal-content" onClick=${e => e.stopPropagation()}>
-      <h3>Congratulations!</h3>
-      <p>Your Free Audit is confirmed.</p>
-      <button class="modal-close" onClick=${onClose}>Awesome!</button>
-    </div>
-  </div>
-`;
-
     const Ribbon = () => html`
-  <a href="#lead-form" class="ribbon">
-    <div class="ribbon-track">
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-      <span class="ribbon-item">Grab your Free Digital Audit now!</span>
-    </div>
-  </a>
-`;
-
-    const Nav = () => html`
-  <nav class="nav-pill">
-    <a href="#hero" class="nav-logo">Free<span>Anser</span></a>
-    <a href="#lead-form" class="nav-cta">Free Digital Presence Audit!</a>
-  </nav>
-`;
-
-    const Hero = () => html`
-  <section id="hero" class="hero">
-    <div class="blob blob-1"></div>
-    <div class="hero-grid">
-      <div class="hero-text-content">
-        <h1>Lets <span>24x</span> your visibility<br/>with our professional writers!</h1>
-        <div style="height: clamp(0.5rem, 2vh, 1.5rem);"></div> <!-- Responsive spacing -->
-        <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market dominance.</p>
-      </div>
-      <div class="hero-image-wrapper">
-        <img 
-          src="writer.png" 
-          alt="Professional Writer" 
-          class="hero-image" 
-          loading="eager" 
-          fetchpriority="high" 
-        />
-      </div>
-    </div>
-    <div class="hero-ribbon">
-      <div class="ribbon-track hero-track">
-        <span class="ribbon-item"><span class="ribbon-title">Shiple (SaaS):</span> We need content for our Landing Page</span>
-        <span class="ribbon-item"><span class="ribbon-title">Naveen (Campgemini):</span> I want writer for my LinkedIn</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (EdTech):</span> Optimise my website SEO for visibility</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need Ghost writer for 30 Blogs</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want Youtube scripts and SEO</span>
-        <span class="ribbon-item"><span class="ribbon-title">Shiple (SaaS):</span> We need content for our Landing Page</span>
-        <span class="ribbon-item"><span class="ribbon-title">Naveen (Campgemini):</span> I want writer for my LinkedIn</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (EdTech):</span> Optimise my website SEO for visibility</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need Ghost writer for 30 Blogs</span>
-        <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want Youtube scripts and SEO</span>
-      </div>
-    </div>
-  </section>
-`;
-
-    const Process = () => {
-      const steps = [
-        { num: "1", title: "Digital Presence Audit", desc: "Submit the form" },
-        { num: "2", title: "Get the Report", desc: "What's wrong and what can be worked upon" },
-        { num: "3", title: "Custom Quote", desc: "Custom plans that are always within your budget" },
-        { num: "4", title: "Strategic Roadmap", desc: "Specialised roadmap and Execution for maximum results" },
-      ];
-
-      return html`
-    <section id="process" class="process">
-      <div class="process-container">
-        <h2 class="section-title">The <span>Fast</span> 4-Step Process</h2>
-        <div class="steps-grid">
-          ${steps.map((step, i) => html`
-            <div class="step-card" key=${i}>
-              <div class="step-num">${step.num}</div>
-              <h3 class="step-title">${step.title}</h3>
-              <p class="step-desc">${step.desc}</p>
-            </div>
+      <div class="ribbon">
+        <div class="ribbon-track">
+          ${[1, 2, 3, 4, 5].map(() => html`
+            <span class="ribbon-item">Grab your Free Digital Audit now! 🚀</span>
           `)}
         </div>
       </div>
-    </section>
-  `;
-    };
+    `;
 
-    const LeadForm = ({ onOpenModal }) => {
-      const [email, setEmail] = useState('');
-      const [link, setLink] = useState('');
-      const [isSubmitting, setIsSubmitting] = useState(false);
+    const Nav = () => html`
+      <nav class="nav-pill">
+        <a href="#" class="nav-logo">Free<span>Anser</span></a>
+        <a href="#lead-form" class="nav-cta">Free Audit!</a>
+      </nav>
+    `;
 
-      const handleSubmit = async (e) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-
-        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzNCw_hH1mbT1EU9NR3qjfO_ZKyCInYX1S2WNP6qZTZju2Ua8CGT8Jcq6aCNiNnum55LA/exec';
-
-        try {
-          if (SCRIPT_URL && SCRIPT_URL.includes('/macros/s/')) {
-            // Using URLSearchParams for a 'simple' request that avoids extra auth checks in many browsers
-            const formData = new URLSearchParams();
-            formData.append('email', email);
-            formData.append('link', link);
-            formData.append('date', new Date().toLocaleString());
-
-            await fetch(SCRIPT_URL, {
-              method: 'POST',
-              mode: 'no-cors',
-              body: formData
-            });
-          }
-          onOpenModal();
-          setEmail('');
-          setLink('');
-        } catch (error) {
-          console.error('Error submitting form:', error);
-          onOpenModal();
-        } finally {
-          setIsSubmitting(false);
-        }
-      };
-
-      return html`
-    <section id="lead-form" class="lead-section">
-      <div class="blob blob-2"></div>
-      <div class="form-wrapper">
-        <h2 class="section-title">Free Digital <span>Presence</span> Audit</h2>
-        <p>(no Strings attached)</p>
-        <form onSubmit=${handleSubmit}>
-          <div class="input-group">
-            <input 
-              type="email" 
-              class="input-field" 
-              placeholder="Your Email Address" 
-              value=${email} 
-              onInput=${e => setEmail(e.target.value)} 
-              required 
-            />
+    const Hero = () => html`
+      <section id="hero" class="hero">
+        <div class="blob" style="top: 10%; left: -10%;"></div>
+        <div class="hero-grid">
+          <div class="hero-text-content">
+            <h1>Let's <span>24x</span> your visibility!</h1>
+            <p>Transform your brand with professional writing and data-driven content strategies.</p>
           </div>
-          <div class="input-group">
-            <input 
-              type="text" 
-              class="input-field" 
-              placeholder="Business link (Website / Instagram / Google profile)" 
-              value=${link} 
-              onInput=${e => setLink(e.target.value)} 
-              required 
-            />
+          <div class="hero-image-wrapper">
+            <img src="writer.png" alt="Writer" class="hero-image" />
           </div>
-          <button type="submit" class="glow-btn" disabled=${isSubmitting}>
-            ${isSubmitting ? 'Processing...' : 'Book My Free Audit'}
-          </button>
-        </form>
-      </div>
-    </section>
-  `;
-    };
+        </div>
+        <div class="hero-ribbon">
+          <div class="ribbon-track">
+            <span class="ribbon-item"><b>Shiple:</b> Content for Landing Page</span>
+            <span class="ribbon-item"><b>Naveen:</b> LinkedIn Strategy</span>
+            <span class="ribbon-item"><b>Founder:</b> SEO Optimization</span>
+          </div>
+        </div>
+      </section>
+    `;
+
+    const Process = () => html`
+      <section id="process">
+        <h2 style="font-weight:900; margin-bottom: 1rem;">The <span>Fast</span> Process</h2>
+        <div class="steps-grid">
+          <div class="step-card"><div class="step-num">1</div><h3 class="step-title">Submit Audit</h3><p class="step-desc">Fill the form</p></div>
+          <div class="step-card"><div class="step-num">2</div><h3 class="step-title">Get Report</h3><p class="step-desc">Analysis sent</p></div>
+          <div class="step-card"><div class="step-num">3</div><h3 class="step-title">Custom Quote</h3><p class="step-desc">Budget-friendly</p></div>
+          <div class="step-card"><div class="step-num">4</div><h3 class="step-title">Execution</h3><p class="step-desc">Maximum results</p></div>
+        </div>
+      </section>
+    `;
+
+    const Form = ({ onComplete }) => html`
+      <section id="lead-form">
+        <div class="form-wrapper">
+          <h2 style="font-weight:900; margin-bottom: 0.5rem;">Free <span>Presence</span> Audit</h2>
+          <p style="font-size: 0.8rem; margin-bottom: 1rem;">(No strings attached)</p>
+          <input type="email" class="input-field" placeholder="Email Address" />
+          <input type="text" class="input-field" placeholder="Website / Instagram Link" />
+          <button class="glow-btn" onClick=${onComplete}>Get Free Audit</button>
+        </div>
+      </section>
+    `;
 
     const Portfolio = () => html`
-  <section id="portfolio" class="portfolio">
-    <div class="portfolio-container">
-      <h2 class="section-title">Our Writers <span>Portfolio</span></h2>
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <h3>Geeks for Geeks</h3>
+      <section id="portfolio">
+        <h2 style="font-weight:900; margin-bottom: 1.5rem;">Our <span>Portfolio</span></h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">Geeks for Geeks</div>
+          <div class="portfolio-card">Scaler Academy</div>
+          <div class="portfolio-card">Ajit Bhavan</div>
         </div>
-        <div class="portfolio-card">
-          <h3>Scaler</h3>
-        </div>
-        <div class="portfolio-card">
-          <h3>Ajit Bhavan</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-`;
-
-    // ============================================
-    // ROOT APP COMPONENT
-    // ============================================
+      </section>
+    `;
 
     const App = () => {
-      const [activeIndex, setActiveIndex] = useState(0);
-      const [isModalOpen, setIsModalOpen] = useState(false);
-      const isScrolling = useRef(false);
-      const touchStartY = useRef(0);
-      const totalSections = 4;
+      const [idx, setIdx] = useState(0);
+      const [isScrolling, setIsScrolling] = useState(false);
+      const touchStart = useRef(0);
+      const sections = 4;
+
+      const handleScroll = (dir) => {
+        if (isScrolling) return;
+        setIsScrolling(true);
+        if (dir > 0 && idx < sections - 1) setIdx(idx + 1);
+        else if (dir < 0 && idx > 0) setIdx(idx - 1);
+        setTimeout(() => setIsScrolling(false), 800);
+      };
 
       useEffect(() => {
-        const handleAnchor = (e) => {
-          const target = e.target.closest('a');
-          if (target && target.hash) {
-            if (target.hash === '#hero') { e.preventDefault(); setActiveIndex(0); }
-            else if (target.hash === '#lead-form') { e.preventDefault(); setActiveIndex(2); }
-          }
+        const onWheel = (e) => { e.preventDefault(); handleScroll(e.deltaY); };
+        const onTouchStart = (e) => { touchStart.current = e.touches[0].clientY; };
+        const onTouchMove = (e) => {
+          e.preventDefault();
+          const diff = touchStart.current - e.touches[0].clientY;
+          if (Math.abs(diff) > 40) { handleScroll(diff); touchStart.current = e.touches[0].clientY; }
         };
-        document.addEventListener('click', handleAnchor);
-        return () => document.removeEventListener('click', handleAnchor);
-      }, []);
-
-      useEffect(() => {
-        const handleWheel = (e) => {
-          if (Math.abs(e.deltaY) < 10) return;
-          if (isScrolling.current) return;
-          isScrolling.current = true;
-          if (e.deltaY > 0 && activeIndex < totalSections - 1) setActiveIndex(prev => prev + 1);
-          else if (e.deltaY < 0 && activeIndex > 0) setActiveIndex(prev => prev - 1);
-          setTimeout(() => { isScrolling.current = false; }, 800);
-        };
-
-        const handleTouchStart = (e) => { touchStartY.current = e.touches[0].clientY; };
-        const handleTouchMove = (e) => {
-          if (isScrolling.current) return;
-          const touchY = e.touches[0].clientY;
-          const diff = touchStartY.current - touchY;
-          if (Math.abs(diff) < 30) return;
-          isScrolling.current = true;
-          if (diff > 0 && activeIndex < totalSections - 1) setActiveIndex(prev => prev + 1);
-          else if (diff < 0 && activeIndex > 0) setActiveIndex(prev => prev - 1);
-          setTimeout(() => { isScrolling.current = false; }, 800);
-        };
-
-        window.addEventListener('wheel', handleWheel, { passive: false });
-        window.addEventListener('touchstart', handleTouchStart, { passive: false });
-        window.addEventListener('touchmove', handleTouchMove, { passive: false });
+        window.addEventListener('wheel', onWheel, { passive: false });
+        window.addEventListener('touchstart', onTouchStart, { passive: false });
+        window.addEventListener('touchmove', onTouchMove, { passive: false });
         return () => {
-          window.removeEventListener('wheel', handleWheel);
-          window.removeEventListener('touchstart', handleTouchStart);
-          window.removeEventListener('touchmove', handleTouchMove);
+          window.removeEventListener('wheel', onWheel);
+          window.removeEventListener('touchstart', onTouchStart);
+          window.removeEventListener('touchmove', onTouchMove);
         };
-      }, [activeIndex]);
+      }, [idx, isScrolling]);
 
       return html`
-    <div id="root-container">
-      <${Ribbon} />
-      <${Nav} />
-      <div 
-        style=${{
-          transform: 'translateY(-' + activeIndex * 100 + 'dvh)',
-          transition: 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)',
-          willChange: 'transform',
-          height: '400dvh'
-        }}
-      >
-        <${Hero} />
-        <${Process} />
-        <${LeadForm} onOpenModal=${() => setIsModalOpen(true)} />
-        <${Portfolio} />
-      </div>
-      <${Modal} isOpen=${isModalOpen} onClose=${() => setIsModalOpen(false)} />
-    </div>
-  `;
+        <div id="root-container">
+          <${Ribbon} />
+          <${Nav} />
+          <div style=${{
+            transform: \`translateY(-\${idx * 100}dvh)\`,
+            transition: 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)',
+            height: '100%'
+          }}>
+            <${Hero} />
+            <${Process} />
+            <${Form} onComplete=${() => alert('Audit Requested!')} />
+            <${Portfolio} />
+          </div>
+        </div>
+      `;
     };
 
-    // ============================================
-    // RENDER
-    // ============================================
-    const container = document.getElementById('root');
-    render(html`<${App} />`, container);
+    render(html`<${App} />`, document.getElementById('root'));
   </script>
 </body>
-
 </html>
