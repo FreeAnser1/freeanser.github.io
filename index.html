@@ -815,7 +815,7 @@
       }
       
       .hero-text-content {
-        margin-top: 2.5dvh; /* Optimal top padding matched by ribbon bottom */
+        margin-top: 0.5dvh; /* Reduced from 2.5dvh to remove awkward padding */
         margin-bottom: 0;
         text-align: center;
       }
@@ -838,25 +838,25 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 35dvh;
-        margin-bottom: 1.5dvh;
+        max-height: 30dvh; /* Reduced from 35dvh to make space for ribbon */
+        margin-bottom: 1dvh; /* Reduced from 1.5dvh */
         min-height: 0;
       }
 
       .hero-image {
-        max-height: 35dvh;
+        max-height: 30dvh; /* Consistent with wrapper */
         width: auto;
         max-width: 85vw;
         object-fit: contain;
-        image-rendering: -webkit-optimize-contrast; /* Sharpening for DPR 2 */
-        transform: translateZ(0); /* Hardware acceleration */
+        image-rendering: -webkit-optimize-contrast; 
+        transform: translateZ(0); 
       }
 
       .hero-ribbon {
         position: relative;
         height: 36px;
         margin-top: auto;
-        margin-bottom: 2.5dvh; /* Symmetrical bottom padding matching top */
+        margin-bottom: 1dvh; /* Reduced from 2.5dvh to ensure visibility */
         font-size: 0.85rem;
         width: 100vw;
         border-top: 1px solid var(--primary);
@@ -898,7 +898,7 @@
         <div class="hero-grid">
           <div class="hero-text-content">
             <h1>Lets <span>24x</span> your visibility<br />with our professional writers!</h1>
-            <div style="height: 1.5rem;"></div> <!-- Spacing between H1 and p -->
+            <div style="height: clamp(0.5rem, 2vh, 1.5rem);"></div> <!-- Responsive spacing -->
             <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market
               dominance.</p>
           </div>
@@ -964,7 +964,7 @@
     <div class="hero-grid">
       <div class="hero-text-content">
         <h1>Lets <span>24x</span> your visibility<br/>with our professional writers!</h1>
-        <div style="height: 1.5rem;"></div> <!-- Spacing between H1 and p -->
+        <div style="height: clamp(0.5rem, 2vh, 1.5rem);"></div> <!-- Responsive spacing -->
         <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market dominance.</p>
       </div>
       <div class="hero-image-wrapper">
@@ -1172,10 +1172,10 @@
       <${Nav} />
       <div 
         style=${{
-          transform: 'translateY(-' + activeIndex * 100 + 'vh)',
+          transform: 'translateY(-' + activeIndex * 100 + 'dvh)',
           transition: 'transform 0.8s cubic-bezier(0.65, 0, 0.35, 1)',
           willChange: 'transform',
-          height: '400vh'
+          height: '400dvh'
         }}
       >
         <${Hero} />
