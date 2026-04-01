@@ -4,58 +4,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!-- ═══ Primary SEO ═══ -->
   <title>FreeAnser | Professional Content Writing & Digital Presence Agency</title>
   <meta name="description"
-    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit and transform your brand with data-driven content strategies.">
+    content="FreeAnser helps startups and founders 24x their online visibility with professional content writing, SEO strategy, LinkedIn ghostwriting, and free digital presence audits. Book yours today.">
   <meta name="keywords"
-    content="content writing, digital presence, SEO writing, professional writers, brand visibility, content strategy, free audit">
-  <link rel="canonical" href="https://freeanser.com" />
+    content="content writing agency, digital presence audit, SEO content writing, professional ghostwriter, LinkedIn content writer, brand visibility, content strategy, free SEO audit, FreeAnser">
+  <meta name="author" content="FreeAnser">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#FF7A00">
+  <link rel="canonical" href="https://freeanser.com/" />
 
-  <!-- Open Graph / Facebook -->
+  <!-- ═══ Open Graph / Facebook ═══ -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://freeanser.com/">
+  <meta property="og:site_name" content="FreeAnser">
   <meta property="og:title" content="FreeAnser | Professional Content Writing & Digital Presence Agency">
   <meta property="og:description"
-    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
+    content="24x your brand visibility with expert content writers. Get your Free Digital Presence Audit — no strings attached.">
   <meta property="og:image" content="https://freeanser.com/writer.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_US">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://freeanser.com/">
-  <meta property="twitter:title" content="FreeAnser | Professional Content Writing & Digital Presence Agency">
-  <meta property="twitter:description"
-    content="Lets 24x your visibility with our professional writers. Get a Free Digital Presence Audit now.">
-  <meta property="twitter:image" content="https://freeanser.com/writer.png">
+  <!-- ═══ Twitter Card ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://freeanser.com/">
+  <meta name="twitter:title" content="FreeAnser | Professional Content Writing & Digital Presence Agency">
+  <meta name="twitter:description"
+    content="24x your brand visibility with expert content writers. Get your Free Digital Presence Audit — no strings attached.">
+  <meta name="twitter:image" content="https://freeanser.com/writer.png">
 
-  <!-- JSON-LD Structured Data -->
+  <!-- ═══ JSON-LD Structured Data ═══ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Content Writing & Digital Presence Agency",
-    "provider": {
-      "@type": "Organization",
-      "name": "FreeAnser",
-      "url": "https://freeanser.com"
-    },
-    "description": "Professional content writing services to 24x your brand visibility.",
-    "areaServed": "Global",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Audit & Strategy",
-      "itemListElement": [
-        {
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://freeanser.com/#organization",
+        "name": "FreeAnser",
+        "url": "https://freeanser.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://freeanser.com/writer.png"
+        },
+        "description": "Professional content writing and digital presence agency helping startups and brands 24x their online visibility.",
+        "areaServed": "Global",
+        "sameAs": []
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://freeanser.com/#website",
+        "url": "https://freeanser.com",
+        "name": "FreeAnser",
+        "publisher": { "@id": "https://freeanser.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://freeanser.com/#webpage",
+        "url": "https://freeanser.com",
+        "name": "Free Digital Presence Audit | FreeAnser Content Writing Agency",
+        "isPartOf": { "@id": "https://freeanser.com/#website" },
+        "about": { "@id": "https://freeanser.com/#organization" },
+        "description": "Get a free digital presence audit from FreeAnser and discover how to 24x your brand visibility with professional content writing and SEO strategy."
+      },
+      {
+        "@type": "Service",
+        "@id": "https://freeanser.com/#service",
+        "name": "Free Digital Presence Audit",
+        "serviceType": "Content Writing & Digital Presence Audit",
+        "provider": { "@id": "https://freeanser.com/#organization" },
+        "description": "A comprehensive, no-obligation audit of your website, social media, and search visibility — with a custom action plan delivered to your inbox.",
+        "areaServed": "Global",
+        "offers": {
           "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Free Digital Presence Audit"
-          }
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "name": "Free Digital Presence Audit"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Content Writing Services",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Content Writing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LinkedIn Ghostwriting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Blog Writing" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Copywriting" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "YouTube Script Writing" } }
+          ]
         }
-      ]
-    }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Digital Presence Audit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Digital Presence Audit is a comprehensive review of your website SEO, social media profiles, and online content to identify gaps and opportunities for growth. FreeAnser provides this free of charge."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does FreeAnser help increase my visibility?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "FreeAnser's professional writers create SEO-optimised content, LinkedIn posts, blogs, and website copy using data-driven strategies that consistently grow organic visibility for startups and founders."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
+  <!-- ═══ Fonts ═══ -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://esm.sh">
@@ -64,11 +131,14 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=optional" media="all">
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap">
   </noscript>
 
   <style>
-    /* ── Design Tokens ── */
+    /* ═══════════════════════════════════════════
+       DESIGN TOKENS
+    ═══════════════════════════════════════════ */
     :root {
       --bg: #F5F2E6;
       --primary: #FF7A00;
@@ -76,14 +146,27 @@
       --text: #1a1a1a;
       --glass: rgba(255, 255, 255, 0.6);
       --glass-border: rgba(0, 0, 0, 0.08);
+
+      /* Fixed chrome heights */
       --ribbon-h: 32px;
       --nav-h: 56px;
       --header-h: calc(var(--ribbon-h) + var(--nav-h));
+
+      /*
+        --bottom-safe: padding under the hero bottom ribbon (and top of every
+        other section) so content never sits behind Android/iOS system nav bars.
+        Equals the same value used as padding-top offset so spacing is symmetric.
+        env(safe-area-inset-bottom) adds notch/gesture-bar clearance on top.
+      */
+      --bottom-safe: calc(20px + env(safe-area-inset-bottom, 0px));
+
       /* 44px minimum touch target (Apple HIG / WCAG 2.5.5) */
       --touch-min: 44px;
     }
 
-    /* ── Reset ── */
+    /* ═══════════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════════ */
     *, *::before, *::after {
       margin: 0;
       padding: 0;
@@ -92,7 +175,6 @@
     }
 
     html {
-      /* Prevent font-size inflation on iOS landscape */
       -webkit-text-size-adjust: 100%;
       text-size-adjust: 100%;
       scroll-behavior: smooth;
@@ -106,7 +188,6 @@
       -webkit-user-select: none;
       -moz-user-select: none;
       user-select: none;
-      /* Prevent horizontal scroll bleed at 380px */
       max-width: 100vw;
       overscroll-behavior: none;
     }
@@ -116,22 +197,28 @@
       color: #fff;
     }
 
-    /* ── Scroll Container ── */
+    /* ═══════════════════════════════════════════
+       SCROLL CONTAINER
+    ═══════════════════════════════════════════ */
     #root-container {
       height: 100dvh;
       overflow: hidden;
       touch-action: pan-y;
-      /* Prevent any child from breaking 380px layout */
       max-width: 100vw;
     }
 
-    /* ── Section Base ── */
+    /* ═══════════════════════════════════════════
+       SECTION BASE
+       Top padding    = header height (nav + ribbon)
+       Bottom padding = --bottom-safe (same value, symmetric)
+                        clears mobile system nav bar for every section
+    ═══════════════════════════════════════════ */
     section {
       min-height: 100dvh;
       height: 100dvh;
       width: 100vw;
       max-width: 100vw;
-      padding: calc(var(--header-h) + 32px) clamp(16px, 5vw, 60px) 32px;
+      padding: calc(var(--header-h) + 32px) clamp(16px, 5vw, 60px) var(--bottom-safe);
       position: relative;
       display: flex;
       flex-direction: column;
@@ -139,7 +226,7 @@
       justify-content: center;
       overflow: hidden;
       text-align: center;
-      background-image: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.08) 100%);
+      background-image: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.08) 100%);
     }
 
     /* ═══════════════════════════════════════════
@@ -158,7 +245,6 @@
       overflow: hidden;
       z-index: 1000;
       font-weight: 800;
-      /* Use px floor so DPR 3 renders crisp at physical 84px ribbon */
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.4px;
@@ -215,7 +301,6 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--glass-border);
-      /* 8px side padding on 380px keeps logo + cta comfortable */
       padding: 0 clamp(8px, 3vw, 5%);
       height: var(--nav-h);
       display: flex;
@@ -223,18 +308,16 @@
       justify-content: space-between;
       gap: 8px;
       z-index: 2000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .nav-logo {
       font-weight: 900;
-      /* Floor at 1.25rem so logo stays legible on 380px */
       font-size: clamp(1.25rem, 5vw, 2.2rem);
       color: var(--text);
       cursor: pointer;
       text-decoration: none;
       flex-shrink: 0;
-      /* Ensure logo tap target meets 44px */
       min-height: var(--touch-min);
       display: flex;
       align-items: center;
@@ -247,24 +330,22 @@
     .nav-cta {
       background: var(--primary);
       color: #ffffff;
-      /* Tighter padding on mobile, expand on larger screens */
       padding: 0 clamp(10px, 2.5vw, 2rem);
       height: clamp(36px, 5.5vw, 44px);
       min-height: var(--touch-min);
       border-radius: 50px;
       font-weight: 800;
       text-decoration: none;
-      /* 11px floor prevents sub-pixel blur at DPR 3 */
       font-size: clamp(0.68rem, 1.8vw, 1rem);
       white-space: nowrap;
       transition: all 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      /* Hard cap so it never wraps on 380px */
       max-width: 58vw;
       overflow: hidden;
       text-overflow: ellipsis;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .nav-cta:hover {
@@ -280,8 +361,14 @@
     }
 
     #hero {
+      /* Top offset = full header height */
       padding-top: var(--header-h);
-      padding-bottom: 0;
+      /*
+        Bottom padding = --bottom-safe
+        This pushes the hero-ribbon up by the same amount used under nav,
+        preventing overlap with the mobile system navigation bar.
+      */
+      padding-bottom: var(--bottom-safe);
       justify-content: flex-start;
       min-height: 100dvh;
       max-height: 100dvh;
@@ -355,7 +442,6 @@
       border-radius: clamp(12px, 3vw, 24px);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
       border: 1px solid var(--glass-border);
-      /* DPR 3 sharpness hints */
       image-rendering: -webkit-optimize-contrast;
       transform: translateZ(0);
     }
@@ -365,7 +451,11 @@
       50%       { transform: translateY(-6px); }
     }
 
-    /* ── Hero Bottom Ticker ── */
+    /* ── Hero Bottom Ticker ──
+       margin-top: auto pins it to the bottom of the flex column.
+       The padding-bottom on #hero (= --bottom-safe) creates the
+       identical breathing room below this ribbon as exists under the nav.
+    */
     .hero-ribbon {
       width: 100%;
       height: clamp(34px, 5vh, 48px);
@@ -379,7 +469,6 @@
       font-weight: 400;
       font-size: clamp(0.8rem, 1.8vw, 1.05rem);
       color: #0474BA;
-      /* Pin to bottom of hero */
       margin-top: auto;
       flex-shrink: 0;
     }
@@ -431,7 +520,6 @@
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       backdrop-filter: blur(10px);
       cursor: pointer;
-      /* Ensure cards are tappable */
       min-height: var(--touch-min);
     }
 
@@ -500,7 +588,7 @@
       max-width: 600px;
       width: 95%;
       text-align: center;
-      box-shadow: 0 30px 60px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
     }
 
     .form-wrapper h2 {
@@ -509,7 +597,7 @@
       margin-bottom: 0.4rem;
     }
 
-    .form-wrapper p {
+    .form-wrapper > p {
       color: rgba(26, 26, 26, 0.7);
       margin-bottom: clamp(1rem, 3vw, 2.5rem);
       font-size: clamp(0.82rem, 1.8vw, 1rem);
@@ -522,19 +610,17 @@
 
     .input-field {
       width: 100%;
-      /* 48px physical height at DPR 1 → 144px at DPR 3 — very tappable */
       padding: clamp(0.75rem, 2vw, 1.2rem) clamp(0.9rem, 2.5vw, 1.5rem);
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid var(--glass-border);
       border-radius: clamp(10px, 2vw, 16px);
       color: var(--text);
-      font-size: 16px; /* Hard 16px prevents iOS auto-zoom on focus */
+      font-size: 16px; /* Hard 16px — prevents iOS auto-zoom on focus */
       outline: none;
       transition: border-color 0.3s;
       -webkit-user-select: auto;
       -moz-user-select: auto;
       user-select: auto;
-      /* Prevent inputs from overflowing 380px card */
       max-width: 100%;
     }
 
@@ -545,13 +631,11 @@
 
     .input-field::placeholder {
       color: rgba(26, 26, 26, 0.4);
-      /* Keep placeholder 14px so it fits long placeholder text on 380px */
       font-size: 14px;
     }
 
     .glow-btn {
       width: 100%;
-      /* 48px minimum for touch accessibility */
       min-height: 48px;
       padding: clamp(0.75rem, 2vw, 1.2rem);
       background: var(--primary);
@@ -565,7 +649,6 @@
       overflow: hidden;
       transition: all 0.3s;
       box-shadow: 0 0 20px rgba(255, 122, 0, 0.4);
-      /* Active state feedback for mobile */
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -574,7 +657,7 @@
       position: absolute;
       top: -50%; left: -50%;
       width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
       opacity: 0;
       transform: scale(0.5);
       transition: opacity 0.3s, transform 0.5s;
@@ -656,7 +739,7 @@
       max-width: 300px;
       backdrop-filter: blur(10px);
       transition: all 0.3s;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -690,7 +773,6 @@
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s;
-      /* Safe area insets for notched phones */
       padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     }
 
@@ -705,7 +787,6 @@
       padding: 2.5rem 1.75rem;
       border-radius: 28px;
       text-align: center;
-      /* 90vw so it never clips on 380px */
       max-width: min(400px, 90vw);
       width: 100%;
       transform: scale(0.9);
@@ -802,33 +883,32 @@
 
     /* ═══════════════════════════════════════════
        MOBILE — 380px / DPR 3 TARGET
-       Strategy:
-         • Ribbon  24px  (physical 72px at DPR3)
-         • Nav     48px  (physical 144px — hits 44pt touch)
-         • Header  72px total
-         • Hero body split: text ~42% / image ~38% / ticker ~8%
-         • All font sizes in px floors to stay crisp on DPR 3
+       • Ribbon  24px  → 72 physical px @ DPR 3
+       • Nav     48px  → 144 physical px (meets 44pt touch)
+       • Header  72px total
+       • --bottom-safe recalculates automatically
+         to 20px + env(safe-area-inset-bottom)
+       • Hero: text ~40% / image ~42% / ticker = remainder
+       • Padding under nav == padding under hero ribbon (symmetric)
     ═══════════════════════════════════════════ */
     @media (max-width: 480px) {
       :root {
         --ribbon-h: 24px;
         --nav-h: 48px;
         /* header-h auto-recalculates to 72px */
+        /* bottom-safe auto-recalculates: 20px + safe-area */
       }
 
-      /* ── Section padding ── */
       section {
         padding-left: 16px;
         padding-right: 16px;
       }
 
-      /* ── Ribbon font ── */
       .ribbon {
         font-size: 10px;
         letter-spacing: 0.3px;
       }
 
-      /* ── Nav ── */
       .nav-pill {
         padding: 0 12px;
         gap: 6px;
@@ -843,15 +923,16 @@
         padding: 0 10px;
         height: 36px;
         min-height: 36px;
-        /* Enough for tap; not so tall it crowds logo */
         border-radius: 40px;
         max-width: 54vw;
       }
 
-      /* ── Hero layout ── */
+      /* ── Hero ── */
       #hero {
         padding-top: var(--header-h);
-        padding-bottom: 0;
+        /* padding-bottom = --bottom-safe (same as spacing under nav pill)
+           This is the key fix: hero-ribbon floats above bottom nav bar */
+        padding-bottom: var(--bottom-safe);
         padding-left: 0;
         padding-right: 0;
         display: flex;
@@ -875,7 +956,6 @@
         padding: 8px 16px 0;
       }
 
-      /* Hero text block */
       .hero-text-content {
         text-align: center;
         order: 1;
@@ -884,14 +964,12 @@
       }
 
       .hero h1 {
-        /* 22px physical = 66px device pixels @ DPR 3 — sharp & readable */
         font-size: 22px;
         line-height: 1.18;
         margin-bottom: 6px;
         letter-spacing: -0.3px;
       }
 
-      /* Spacer between h1 and p — use padding not a div */
       .hero p {
         font-size: 14px;
         line-height: 1.5;
@@ -900,14 +978,12 @@
         color: rgba(26, 26, 26, 0.72);
       }
 
-      /* Hero CTA button (if present) */
       .hero-badge {
         font-size: 11px;
         padding: 3px 10px;
         margin-bottom: 6px;
       }
 
-      /* Hero image */
       .hero-image-wrapper {
         order: 2;
         flex: 1;
@@ -916,13 +992,11 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        /* Leaves ~34% of dvh for text above + ticker below */
         max-height: 42dvh;
         padding: 4px 0;
       }
 
       .hero-image {
-        /* DPR 3: browser downloads 3× pixels; contain keeps aspect ratio */
         width: auto;
         height: auto;
         max-width: 78vw;
@@ -930,16 +1004,20 @@
         object-fit: contain;
         border-radius: 16px;
         image-rendering: -webkit-optimize-contrast;
-        /* Promote to compositor layer for crisp DPR 3 render */
         transform: translateZ(0);
         will-change: transform;
       }
 
-      /* Hero bottom ticker */
+      /*
+        Hero ribbon is flex-shrink:0 + margin-top:auto → always pinned
+        to the bottom of the flex column in #hero.
+        #hero's padding-bottom (= --bottom-safe) lifts the whole column
+        so the ribbon sits above the system nav bar with equal breathing
+        room to the space under the top nav pill.
+      */
       .hero-ribbon {
         height: 34px;
         font-size: 11px;
-        /* Always anchored to very bottom of hero */
         margin-top: auto;
         flex-shrink: 0;
         width: 100%;
@@ -947,9 +1025,9 @@
         border-bottom: 1px solid var(--primary);
       }
 
-      /* ── Process section ── */
+      /* ── Process ── */
       #process {
-        padding: calc(var(--header-h) + 16px) 14px 20px;
+        padding: calc(var(--header-h) + 16px) 14px var(--bottom-safe);
       }
 
       .section-title {
@@ -958,7 +1036,6 @@
       }
 
       .steps-grid {
-        /* 2-column grid on 380px — each card ~170px wide */
         grid-template-columns: 1fr 1fr;
         gap: 10px;
       }
@@ -978,16 +1055,15 @@
         line-height: 1.45;
       }
 
-      /* ── Lead Form section ── */
+      /* ── Lead Form ── */
       #lead-form {
-        padding: calc(var(--header-h) + 12px) 12px 20px;
+        padding: calc(var(--header-h) + 12px) 12px var(--bottom-safe);
       }
 
       .form-wrapper {
         padding: 20px 16px;
         border-radius: 20px;
         width: 100%;
-        /* No wider than viewport minus gutters */
         max-width: calc(100vw - 24px);
       }
 
@@ -1006,7 +1082,6 @@
       }
 
       .input-field {
-        /* 16px hard — iOS zooms in on anything < 16px */
         font-size: 16px;
         padding: 11px 14px;
         border-radius: 12px;
@@ -1022,9 +1097,9 @@
         border-radius: 12px;
       }
 
-      /* ── Portfolio section ── */
+      /* ── Portfolio ── */
       #portfolio {
-        padding: calc(var(--header-h) + 16px) 14px 20px;
+        padding: calc(var(--header-h) + 16px) 14px var(--bottom-safe);
       }
 
       .portfolio-grid {
@@ -1035,7 +1110,6 @@
       .portfolio-card {
         padding: 16px 12px;
         border-radius: 16px;
-        /* 3 cards on 380px: each ~106px min */
         min-width: clamp(100px, 28vw, 200px);
         flex: 1 1 clamp(100px, 28vw, 200px);
       }
@@ -1087,7 +1161,7 @@
   <div id="root">
     <!-- Static Bootstrap (LCP Optimisation) -->
     <div id="root-container">
-      <a href="#lead-form" class="ribbon">
+      <a href="#lead-form" class="ribbon" aria-label="Get your free digital audit">
         <div class="ribbon-track">
           <span class="ribbon-item">Grab your Free Digital Audit now!</span>
           <span class="ribbon-item">Grab your Free Digital Audit now!</span>
@@ -1097,22 +1171,22 @@
           <span class="ribbon-item">Grab your Free Digital Audit now!</span>
         </div>
       </a>
-      <nav class="nav-pill">
-        <a href="#hero" class="nav-logo">Free<span>Anser</span></a>
-        <a href="#lead-form" class="nav-cta">Free Digital Presence Audit!</a>
+      <nav class="nav-pill" aria-label="Main navigation">
+        <a href="#hero" class="nav-logo" aria-label="FreeAnser home">Free<span>Anser</span></a>
+        <a href="#lead-form" class="nav-cta" aria-label="Book a free digital presence audit">Free Digital Presence Audit!</a>
       </nav>
-      <section id="hero" class="hero">
-        <div class="blob blob-1"></div>
+      <section id="hero" class="hero" aria-label="Hero">
+        <div class="blob blob-1" aria-hidden="true"></div>
         <div class="hero-grid">
           <div class="hero-text-content">
             <h1>Lets <span>24x</span> your visibility<br>with our professional writers!</h1>
             <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market dominance.</p>
           </div>
           <div class="hero-image-wrapper">
-            <img src="writer.png" alt="Writer" class="hero-image" fetchpriority="high" decoding="async">
+            <img src="writer.png" alt="Professional content writer at FreeAnser helping brands grow online visibility" class="hero-image" fetchpriority="high" decoding="async" width="600" height="600">
           </div>
         </div>
-        <div class="hero-ribbon">
+        <div class="hero-ribbon" aria-label="Live client requests ticker" role="marquee">
           <div class="ribbon-track hero-track">
             <span class="ribbon-item">Loading live client success stories...</span>
           </div>
@@ -1131,17 +1205,23 @@
     // ============================================================
 
     const Modal = ({ isOpen, onClose }) => html`
-      <div class="modal-overlay ${isOpen ? 'active' : ''}" onClick=${onClose}>
+      <div
+        class="modal-overlay ${isOpen ? 'active' : ''}"
+        onClick=${onClose}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Audit confirmation"
+      >
         <div class="modal-content" onClick=${e => e.stopPropagation()}>
           <h3>Congratulations!</h3>
-          <p>Your Free Audit is confirmed.</p>
+          <p>Your Free Digital Presence Audit is confirmed. We'll be in touch shortly.</p>
           <button class="modal-close" onClick=${onClose}>Awesome!</button>
         </div>
       </div>
     `;
 
     const Ribbon = () => html`
-      <a href="#lead-form" class="ribbon">
+      <a href="#lead-form" class="ribbon" aria-label="Get your free digital audit">
         <div class="ribbon-track">
           <span class="ribbon-item">Grab your Free Digital Audit now!</span>
           <span class="ribbon-item">Grab your Free Digital Audit now!</span>
@@ -1158,42 +1238,52 @@
     `;
 
     const Nav = () => html`
-      <nav class="nav-pill">
-        <a href="#hero" class="nav-logo">Free<span>Anser</span></a>
-        <a href="#lead-form" class="nav-cta">Free Digital Presence Audit!</a>
+      <nav class="nav-pill" aria-label="Main navigation">
+        <a href="#hero" class="nav-logo" aria-label="FreeAnser — Content Writing Agency">Free<span>Anser</span></a>
+        <a href="#lead-form" class="nav-cta" aria-label="Book a free digital presence audit">Free Digital Presence Audit!</a>
       </nav>
     `;
 
     const Hero = () => html`
-      <section id="hero" class="hero">
-        <div class="blob blob-1"></div>
+      <section id="hero" class="hero" aria-label="Hero — 24x your digital visibility">
+        <div class="blob blob-1" aria-hidden="true"></div>
         <div class="hero-grid">
           <div class="hero-text-content">
+            <!--
+              h1 is the primary on-page keyword signal for Google.
+              It contains the core service proposition naturally.
+            -->
             <h1>Lets <span>24x</span> your visibility<br/>with our professional writers!</h1>
-            <p>Transform your brand with ultra-optimized content, stunning aesthetics, and a data-driven path to market dominance.</p>
+            <p>
+              Transform your brand with SEO-optimised content, LinkedIn ghostwriting,
+              blog articles, and website copy — crafted by expert writers with a
+              data-driven path to market dominance.
+            </p>
           </div>
           <div class="hero-image-wrapper">
             <img
               src="writer.png"
-              alt="Professional Writer"
+              alt="Professional content writer at FreeAnser helping startups grow online visibility through SEO and content strategy"
               class="hero-image"
               loading="eager"
               fetchpriority="high"
+              width="600"
+              height="600"
             />
           </div>
         </div>
-        <div class="hero-ribbon">
+        <div class="hero-ribbon" aria-label="Live client requests" role="marquee">
           <div class="ribbon-track hero-track">
             <span class="ribbon-item"><span class="ribbon-title">Shiple (SaaS):</span> We need content for our Landing Page</span>
-            <span class="ribbon-item"><span class="ribbon-title">Naveen (Campgemini):</span> I want writer for my LinkedIn</span>
+            <span class="ribbon-item"><span class="ribbon-title">Naveen (Capgemini):</span> I want a writer for my LinkedIn</span>
             <span class="ribbon-item"><span class="ribbon-title">Founder (EdTech):</span> Optimise my website SEO for visibility</span>
-            <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need Ghost writer for 30 Blogs</span>
-            <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want Youtube scripts and SEO</span>
+            <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need a Ghost writer for 30 Blogs</span>
+            <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want YouTube scripts and SEO</span>
             <span class="ribbon-item"><span class="ribbon-title">Shiple (SaaS):</span> We need content for our Landing Page</span>
-            <span class="ribbon-item"><span class="ribbon-title">Naveen (Campgemini):</span> I want writer for my LinkedIn</span>
+            <span class="ribbon-item"><span class="ribbon-title">Naveen (Capgemini):</span> I want a writer for my LinkedIn</span>
             <span class="ribbon-item"><span class="ribbon-title">Founder (EdTech):</span> Optimise my website SEO for visibility</span>
-            <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need Ghost writer for 30 Blogs</span>
-            <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want Youtube scripts and SEO</span>
+            <span class="ribbon-item"><span class="ribbon-title">Founder (Digital Marketing):</span> I need a Ghost writer for 30 Blogs</span>
+            <span class="ribbon-item"><span class="ribbon-title">Founder (FinTech):</span> We want YouTube scripts and SEO</span>
           </div>
         </div>
       </section>
@@ -1201,23 +1291,39 @@
 
     const Process = () => {
       const steps = [
-        { num: "1", title: "Digital Presence Audit", desc: "Submit the form" },
-        { num: "2", title: "Get the Report",         desc: "What's wrong and what can be worked upon" },
-        { num: "3", title: "Custom Quote",            desc: "Custom plans always within your budget" },
-        { num: "4", title: "Strategic Roadmap",       desc: "Specialised roadmap and execution for maximum results" },
+        {
+          num: "1",
+          title: "Digital Presence Audit",
+          desc: "Submit the form and we audit your website, socials, and search ranking in 24 hours."
+        },
+        {
+          num: "2",
+          title: "Get the Report",
+          desc: "Receive a clear breakdown of what's hurting your visibility and exactly what to fix."
+        },
+        {
+          num: "3",
+          title: "Custom Quote",
+          desc: "Flexible content writing plans built specifically around your goals and budget."
+        },
+        {
+          num: "4",
+          title: "Strategic Roadmap",
+          desc: "A specialist content roadmap executed by our writers for maximum organic growth."
+        },
       ];
 
       return html`
-        <section id="process" class="process">
+        <section id="process" class="process" aria-label="Our 4-step content writing process">
           <div class="process-container">
             <h2 class="section-title">The <span>Fast</span> 4-Step Process</h2>
-            <div class="steps-grid">
+            <div class="steps-grid" role="list">
               ${steps.map((step, i) => html`
-                <div class="step-card" key=${i}>
-                  <div class="step-num">${step.num}</div>
+                <article class="step-card" key=${i} role="listitem">
+                  <div class="step-num" aria-hidden="true">${step.num}</div>
                   <h3 class="step-title">${step.title}</h3>
                   <p class="step-desc">${step.desc}</p>
-                </div>
+                </article>
               `)}
             </div>
           </div>
@@ -1261,34 +1367,40 @@
       };
 
       return html`
-        <section id="lead-form" class="lead-section">
-          <div class="blob blob-2"></div>
+        <section id="lead-form" class="lead-section" aria-label="Book your free digital presence audit">
+          <div class="blob blob-2" aria-hidden="true"></div>
           <div class="form-wrapper">
             <h2 class="section-title">Free Digital <span>Presence</span> Audit</h2>
-            <p>(no Strings attached)</p>
-            <form onSubmit=${handleSubmit}>
+            <p>(no strings attached — results in 24 hours)</p>
+            <form onSubmit=${handleSubmit} aria-label="Free digital presence audit request form" novalidate>
               <div class="input-group">
+                <label for="audit-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Your Email Address</label>
                 <input
+                  id="audit-email"
                   type="email"
                   class="input-field"
                   placeholder="Your Email Address"
                   value=${email}
                   onInput=${e => setEmail(e.target.value)}
+                  autocomplete="email"
                   required
                 />
               </div>
               <div class="input-group">
+                <label for="audit-link" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Business Link</label>
                 <input
+                  id="audit-link"
                   type="text"
                   class="input-field"
                   placeholder="Business link (Website / Instagram / Google)"
                   value=${link}
                   onInput=${e => setLink(e.target.value)}
+                  autocomplete="url"
                   required
                 />
               </div>
-              <button type="submit" class="glow-btn" disabled=${isSubmitting}>
-                ${isSubmitting ? 'Processing...' : 'Book My Free Audit'}
+              <button type="submit" class="glow-btn" disabled=${isSubmitting} aria-busy=${isSubmitting}>
+                ${isSubmitting ? 'Processing...' : 'Book My Free Audit →'}
               </button>
             </form>
           </div>
@@ -1297,13 +1409,22 @@
     };
 
     const Portfolio = () => html`
-      <section id="portfolio" class="portfolio">
+      <section id="portfolio" class="portfolio" aria-label="Writer portfolio — brands we have written for">
         <div class="portfolio-container">
-          <h2 class="section-title">Our Writers <span>Portfolio</span></h2>
-          <div class="portfolio-grid">
-            <div class="portfolio-card"><h3>Geeks for Geeks</h3></div>
-            <div class="portfolio-card"><h3>Scaler</h3></div>
-            <div class="portfolio-card"><h3>Ajit Bhavan</h3></div>
+          <h2 class="section-title">Our Writers' <span>Portfolio</span></h2>
+          <p style="color:rgba(26,26,26,0.6);margin-bottom:0.5rem;font-size:clamp(0.85rem,2vw,1rem);">
+            Trusted by leading brands across tech, education, and finance
+          </p>
+          <div class="portfolio-grid" role="list">
+            <div class="portfolio-card" role="listitem">
+              <h3>GeeksforGeeks</h3>
+            </div>
+            <div class="portfolio-card" role="listitem">
+              <h3>Scaler</h3>
+            </div>
+            <div class="portfolio-card" role="listitem">
+              <h3>Ajit Bhavan</h3>
+            </div>
           </div>
         </div>
       </section>
@@ -1324,7 +1445,7 @@
         const handleAnchor = (e) => {
           const target = e.target.closest('a');
           if (target && target.hash) {
-            if (target.hash === '#hero')      { e.preventDefault(); setActiveIndex(0); }
+            if (target.hash === '#hero')           { e.preventDefault(); setActiveIndex(0); }
             else if (target.hash === '#lead-form') { e.preventDefault(); setActiveIndex(2); }
           }
         };
@@ -1342,7 +1463,6 @@
           setTimeout(() => { isScrolling.current = false; }, 800);
         };
 
-        // Touch scroll — increased threshold to 40px to avoid accidental swipes
         const handleTouchStart = (e) => { touchStartY.current = e.touches[0].clientY; };
         const handleTouchMove  = (e) => {
           if (isScrolling.current) return;
